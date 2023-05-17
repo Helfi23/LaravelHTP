@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,5 @@ Route::get('/nilai', function(){
 Route::get('/daftar_nilai', function(){
     return view('daftar_nilai');
 });
+Route::get('/data_siswa',[ SiswaController::class,'dataSiswa']);
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('index');
